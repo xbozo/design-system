@@ -18,6 +18,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@stitches/react": "^1.2.8"
+    "@stitches/react": "^1.2.8",
+    "vite": "^4.4.11"
   }
 }

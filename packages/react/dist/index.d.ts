@@ -1,11 +1,8 @@
 import * as _stitches_react_types_styled_component from '@stitches/react/types/styled-component';
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
 
-type ButtonProps = {
-    size: 'small' | 'big';
-};
 declare const Button: _stitches_react_types_styled_component.StyledComponent<"button", {
-    size?: "small" | "big" | undefined;
+    size?: "big" | "small" | undefined;
 }, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
         readonly white: "#FFF";
@@ -30,13 +27,13 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
         readonly md: "1rem";
         readonly lg: "1.125rem";
         readonly xl: "1.25rem";
-        readonly "2xl": "1.5rem";
-        readonly "4xl": "2rem";
-        readonly "5xl": "2.25rem";
-        readonly "6xl": "3rem";
-        readonly "7xl": "4rem";
-        readonly "8xl": "4.5rem";
-        readonly "9xl": "6rem";
+        readonly '2xl': "1.5rem";
+        readonly '4xl': "2rem";
+        readonly '5xl': "2.25rem";
+        readonly '6xl': "3rem";
+        readonly '7xl': "4rem";
+        readonly '8xl': "4.5rem";
+        readonly '9xl': "6rem";
     };
     fontWeights: {
         readonly regular: "400";
@@ -208,5 +205,6 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
     transition: "transitions";
     zIndex: "zIndices";
 }, {}>>;
+type ButtonProps = React.ComponentProps<typeof Button>;
 
 export { Button, ButtonProps };
