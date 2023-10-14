@@ -172,6 +172,7 @@ function Avatar2(props) {
     /* @__PURE__ */ jsx(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx(User, {}) })
   ] });
 }
+Avatar2.displayName = "Avatar";
 
 // src/components/Box.ts
 var Box = styled("div", {
@@ -180,6 +181,7 @@ var Box = styled("div", {
   backgroundColor: "$gray800",
   border: "1px solid $gray600"
 });
+Box.displayName = "Box";
 
 // src/components/Button.ts
 var Button = styled("button", {
@@ -252,6 +254,69 @@ var Button = styled("button", {
     size: "md"
   }
 });
+Button.displayName = "Button";
+
+// src/components/Checkbox/index.tsx
+import { Check } from "phosphor-react";
+
+// src/components/Checkbox/styles.ts
+import * as Checkbox from "@radix-ui/react-checkbox";
+var CheckboxContainer = styled(Checkbox.Root, {
+  all: "unset",
+  width: "$6",
+  height: "$6",
+  backgroundColor: "$gray900",
+  borderRadius: "$xs",
+  lineHeight: 0,
+  cursor: "pointer",
+  overflow: "hidden",
+  boxSizing: "border-box",
+  border: "2px solid $gray900",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  "&:focus": {
+    border: "2px solid $ignite300"
+  },
+  '&[data-state="checked"]': {
+    backgroundColor: "$ignite300",
+    border: "2px solid $ignite300"
+  }
+});
+var slideIn = keyframes({
+  from: {
+    transform: "translateY(-100%)"
+  },
+  to: {
+    transform: "translateY(0)"
+  }
+});
+var slideOut = keyframes({
+  from: {
+    transform: "translateY(0)"
+  },
+  to: {
+    transform: "translateY(-100%)"
+  }
+});
+var CheckboxIndicator = styled(Checkbox.Indicator, {
+  color: "$white",
+  width: "$4",
+  height: "$4",
+  '&[data-state="checked"]': {
+    animation: `${slideIn} 200ms ease-out`
+  },
+  '&[data-state="unchecked"]': {
+    animation: `${slideOut} 200ms ease-out`
+  }
+});
+
+// src/components/Checkbox/index.tsx
+import { jsx as jsx2 } from "react/jsx-runtime";
+function Checkbox2(props) {
+  return /* @__PURE__ */ jsx2(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ jsx2(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ jsx2(Check, { weight: "bold" }) }) }));
+}
+Checkbox2.displayName = "Checkbox";
 
 // src/components/Heading.ts
 var Heading = styled("h2", {
@@ -272,6 +337,7 @@ var Heading = styled("h2", {
     }
   }
 });
+Heading.displayName = "Heading";
 
 // src/components/Text.ts
 var Text = styled("p", {
@@ -297,6 +363,78 @@ var Text = styled("p", {
     }
   }
 });
+Text.displayName = "Text";
+
+// src/components/MultiStep/styles.ts
+var MultiStepContainer = styled("div", {});
+var Label = styled(Text, {
+  color: "$gray200",
+  defaultVariants: {
+    size: "xs"
+  }
+});
+var Steps = styled("div", {
+  display: "grid",
+  gridTemplateColumns: "repeat(var(--steps-size), 1fr)",
+  gap: "$2",
+  marginTop: "$1"
+});
+var Step = styled("div", {
+  height: "$1",
+  borderRadius: "$px",
+  backgroundColor: "$gray600",
+  variants: {
+    active: {
+      true: {
+        backgroundColor: "$gray100"
+      }
+    }
+  }
+});
+
+// src/components/MultiStep/index.tsx
+import { jsx as jsx3, jsxs as jsxs2 } from "react/jsx-runtime";
+function MultiStep({ size, currentStep = 1 }) {
+  return /* @__PURE__ */ jsxs2(MultiStepContainer, { children: [
+    /* @__PURE__ */ jsxs2(Label, { children: [
+      "Passo ",
+      currentStep,
+      " de ",
+      size
+    ] }),
+    /* @__PURE__ */ jsx3(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
+      return /* @__PURE__ */ jsx3(Step, { active: currentStep >= step }, step);
+    }) })
+  ] });
+}
+MultiStep.displayName = "MultiStep";
+
+// src/components/TextArea.ts
+var TextArea = styled("textarea", {
+  backgroundColor: "$gray900",
+  padding: "$3 $4",
+  borderRadius: "$sm",
+  boxSizing: "border-box",
+  border: "2px solid $gray900",
+  fontFamily: "$default",
+  fontWeight: "regular",
+  fontSize: "$sm",
+  color: "$white",
+  resize: "vertical",
+  minHeight: 80,
+  "&:focus": {
+    outline: 0,
+    borderColor: "$ignite300"
+  },
+  "&:disabled": {
+    opacity: 0.5,
+    cursor: "not-allowed"
+  },
+  "&:placeholder": {
+    color: "$gray400"
+  }
+});
+TextArea.displayName = "TextArea";
 
 // src/components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
@@ -341,19 +479,23 @@ var Input = styled("input", {
 });
 
 // src/components/TextInput/index.tsx
-import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
+import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
 function TextInput(_a) {
   var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
-  return /* @__PURE__ */ jsxs2(TextInputContainer, { children: [
-    !!prefix && /* @__PURE__ */ jsx2(Prefix, { children: prefix }),
-    /* @__PURE__ */ jsx2(Input, __spreadValues({}, props))
+  return /* @__PURE__ */ jsxs3(TextInputContainer, { children: [
+    !!prefix && /* @__PURE__ */ jsx4(Prefix, { children: prefix }),
+    /* @__PURE__ */ jsx4(Input, __spreadValues({}, props))
   ] });
 }
+TextInput.displayName = "TextInput";
 export {
   Avatar2 as Avatar,
   Box,
   Button,
+  Checkbox2 as Checkbox,
   Heading,
+  MultiStep,
   Text,
+  TextArea,
   TextInput
 };
