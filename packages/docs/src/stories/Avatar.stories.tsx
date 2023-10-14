@@ -9,6 +9,13 @@ export default {
     src: 'https://github.com/xbozo.png',
     alt: 'Guilherme Viana',
   },
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}
