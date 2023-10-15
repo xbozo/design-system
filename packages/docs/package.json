@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@bozo-ignite-ui/docs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,9 +13,9 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "@ignite-ui/eslint-config": "*",
-    "@ignite-ui/react": "*",
-    "@ignite-ui/tokens": "*",
+    "@bozo-ignite-ui/react": "*",
+    "@bozo-ignite-ui/eslint-config": "*",
+    "@bozo-ignite-ui/tokens": "*",
     "@storybook/addon-a11y": "^7.4.6",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
