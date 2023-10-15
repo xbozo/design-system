@@ -13,8 +13,8 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "@bozo-ignite-ui/react": "*",
     "@bozo-ignite-ui/eslint-config": "*",
+    "@bozo-ignite-ui/react": "*",
     "@bozo-ignite-ui/tokens": "*",
     "@storybook/addon-a11y": "^7.4.6",
     "phosphor-react": "^1.4.1",
