@@ -1,5 +1,11 @@
 # @bozo-ignite-ui/react
 
+## 2.1.0
+
+### Minor Changes
+
+- Added Tooltip && Toast components
+
 ## 2.0.1
 
 ### Patch Changes
